@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de XML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="100">
+        <h1>Fazer Upload do XML</h1>
+        <h2>Faça aqui a importação dos XMLS do cliente Fertilizantes Tocantins a fim de capturar DI e Navio gerando QR Code:</h2>
+        <form action="/processar-xml" method="post" enctype="multipart/form-data">
+            <input type="file" id="xml-file" name="xml_file">
+            <label for="xml-file">Escolher Arquivo XML</label>
+            <span id="file-label">Nenhum arquivo selecionado</span>
+            <button type="submit">Carregar XML</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('xml-file').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.getElementById('file-label').innerText = fileName;
+        });
+    </script>
+</body>
+</html>
+
