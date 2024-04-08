@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Editar XML</title>
+</head>
+<body>
+    <h1>Editar XML</h1>
+    <form action="/salvar-xml" method="post">
+        <label for="nNF">Número da Nota Fiscal:</label>
+        <input type="text" id="nNF" name="nNF" value="{{ nNF }}"><br>
+
+        <h2>Emitente</h2>
+        <label for="emit_CNPJ">CNPJ do Emitente:</label>
+        <input type="text" id="emit_CNPJ" name="emit_CNPJ" value="{{ emit_CNPJ }}"><br>
+
+        <h2>Destinatário</h2>
+        <label for="dest_CNPJ">CNPJ do Destinatário:</label>
+        <input type="text" id="dest_CNPJ" name="dest_CNPJ" value="{{ dest_CNPJ }}"><br>
+
+        {% for produto in produtos %}
+            <h2>Produto</h2>
+            <label for="cProd">Código do Produto:</label>
+            <input type="text" id="cProd" name="cProd" value="{{ produto.cProd }}"><br>
+
+            <label for="xProd">Descrição do Produto:</label>
+            <input type="text" id="xProd" name="xProd" value="{{ produto.xProd }}"><br>
+
+            <label for="uCom">Unidade de Medida:</label>
+            <input type="text" id="uCom" name="uCom" value="{{ produto.uCom }}"><br>
+
+            <label for="qCom">Quantidade:</label>
+            <input type="text" id="qCom" name="qCom" value="{{ produto.qCom }}"><br>
+
+            <label for="vUnCom">Valor Unitário:</label>
+            <input type="text" id="vUnCom" name="vUnCom" value="{{ produto.vUnCom }}"><br>
+
+            <label for="vTotal">Valor Total:</label>
+            <input type="text" id="vTotal" name="vTotal" value="{{ produto.vTotal }}"><br>
+        {% endfor %}
+
+        <h2>Total NF</h2>
+        <label for="vProd">Valor Total dos Produtos:</label>
+        <input type="text" id="vProd" name="vProd" value="{{ vProd }}"><br>
+
+        <label for="vNF">Valor Total da Nota Fiscal:</label>
+        <input type="text" id="vNF" name="vNF" value="{{ vNF }}"><br>
+
+        <br>
+        <button type="submit">Salvar XML</button>
+    </form>
+</body>
+</html>
+
+

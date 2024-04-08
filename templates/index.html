@@ -10,8 +10,8 @@
 <body>
     <div class="container">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="100">
-        <h1>Fazer Upload do XML</h1>
-        <h2>Faça aqui a importação dos XMLS do cliente Fertilizantes Tocantins a fim de capturar DI e Navio gerando QR Code:</h2>
+        <h1>Upload do XML para edição</h1>
+        <h2>Faça aqui a importação dos XMLS para Edição</h2>
         <form action="/processar-xml" method="post" enctype="multipart/form-data">
             <input type="file" id="xml-file" name="xml_file">
             <label for="xml-file">Escolher Arquivo XML</label>
